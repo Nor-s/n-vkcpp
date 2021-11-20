@@ -28,10 +28,10 @@ namespace painting
 
     private:
         const char *tex_[4] = {
-            "../resources/textures/brushes/1.png",
-            "../resources/textures/brushes/4.png",
-            "../resources/textures/brushes/6.png",
-            "../resources/textures/brushes/9.png"};
+            "../../../resources/textures/brushes/4.png",
+            "../../../resources/textures/brushes/1.png",
+            "../../../resources/textures/brushes/6.png",
+            "../../../resources/textures/brushes/9.png"};
         //   brushes_[0].push_back(std::make_unique<Brush>(device_, render_stage_, command_pool_, 0));
         std::vector<std::unique_ptr<vkcpp::Object2D>> brushes_;
 

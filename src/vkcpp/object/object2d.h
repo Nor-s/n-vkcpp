@@ -49,9 +49,9 @@ namespace vkcpp
 
         const char *texture_file_{nullptr};
 
-        std::string vert_shader_file_{"../resources/shaders/vs_default.spv"};
+        std::string vert_shader_file_{"../../../resources/shaders/vs_default.spv"};
 
-        std::string frag_shader_file_{"../resources/shaders/fs_default.spv"};
+        std::string frag_shader_file_{"../../../resources/shaders/fs_default.spv"};
 
         std::unique_ptr<UniformBuffers<shader::attribute::TransformUBO>> uniform_buffers_{nullptr};
 
