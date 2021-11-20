@@ -79,13 +79,8 @@ add_library(vkcpp::vkcpp ALIAS vkcpp)
 target_compile_options(vkcpp PRIVATE -Wall -O3 -std=c++17)
 
 if(WIN32)
-  # include
-  target_include_directories(vkcpp PUBLIC ./../../external ./../vkcpp
-                                          C:/VulkanSDK/1.2.189.2/Include)
-  # lib
-  target_link_directories(vkcpp PUBLIC ./lib C:/VulkanSDK/1.2.189.2/Lib)
-  # l
-  target_link_libraries(vkcpp -lpthread -lglfw3 -lvulkan-1 -lgdi32 -static)
+  target_include_directories(vkcpp PUBLIC ./ ./../../external)
+  target_link_libraries(vkcpp glfw glm Vulkan::Vulkan -lpthread  -lgdi32 -static)
 endif(WIN32)
 
 if(APPLE)
