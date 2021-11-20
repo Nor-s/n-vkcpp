@@ -1,13 +1,7 @@
-#include "class/picture.h"
+#include "picture.h"
 
-#include "device/device.h"
-#include "device/queue.h"
-#include "render/image/image.h"
-#include "render/image/image2d.h"
-#include "render/render_stage.h"
-#include "render/swapchain/swapchain.h"
-#include "render/command/command_pool.h"
-#include "render/pipeline/graphics_pipeline.h"
+#include "population.h"
+#include "brush.h"
 
 namespace painting
 {

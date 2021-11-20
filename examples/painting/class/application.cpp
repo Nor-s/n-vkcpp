@@ -1,11 +1,6 @@
 #include "application.h"
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
-#include "object/shader_attribute.hpp"
-#include "utility/create.h"
-#include "device/queue.h"
-#include "object/camera/main_camera.h"
-
 namespace painting
 {
 

@@ -1,10 +1,7 @@
 #ifndef CLASS_POPULATION_H
 #define CLASS_POPULATION_H
 
-#include "vulkan_header.h"
 #include "brush.h"
-#include <glm/glm.hpp>
-#include "std_header.h"
 
 namespace painting
 {

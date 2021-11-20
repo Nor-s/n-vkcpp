@@ -1,6 +1,4 @@
-#include "class/brush.h"
-
-#include "utility/utility.h"
+#include "brush.h"
 
 namespace painting
 {

@@ -1,8 +1,7 @@
 #ifndef CLASS_BRUSH_H
 #define CLASS_BRUSH_H
 
-#include "object/object2d.h"
-#include "object/camera/sub_camera.h"
+#include "vkcpp.h"
 
 namespace painting
 {

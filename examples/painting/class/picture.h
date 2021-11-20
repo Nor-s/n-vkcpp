@@ -1,24 +1,19 @@
 #ifndef CLASS_PICTURE_H
 #define CLASS_PICTURE_H
 
-#include "object/object2d.h"
-#include "render/swapchain/offscreens.h"
-#include "render/render_stage.h"
-#include "render/command/command_buffers.h"
-#include "population.h"
-#include "object/camera/sub_camera.h"
-
-#include "std_header.h"
+#include "vkcpp.h"
 
 namespace painting
 {
+    class Brushes;
+    class Population;
     class Picture : public vkcpp::Object2D
     {
 
         static const uint32_t MAX_FRAMES_IN_FLIGHT_ = 3;
         static const uint32_t MAX_THREAD_ = MAX_FRAMES_IN_FLIGHT_;
         //    std::thread frame_thread_[MAX_THREAD_];
-        uint32_t thread_index_ = 0;
+        //uint32_t thread_index_ = 0;
         uint32_t pop_idx_ = 0;
 
     public:

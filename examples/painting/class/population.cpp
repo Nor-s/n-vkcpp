@@ -1,5 +1,4 @@
 #include "population.h"
-#include "utility/utility.h"
 
 namespace painting
 {

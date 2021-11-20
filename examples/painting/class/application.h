@@ -1,31 +1,12 @@
 #ifndef PAINTING_APPLICATION_H
 #define PAINTING_APPLICATION_H
 
-#define GLM_FORCE_DEPTH_ZERO_TO_ONE
-#define GLM_FORCE_RADIANS
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-
-#include "window/main_window.h"
-#include "device/instance.h"
-#include "device/surface.h"
-#include "device/physical_device.h"
-#include "device/device.h"
-#include "render/render_stage.h"
-#include "render/swapchain/swapchain.h"
-#include "render/command/command_pool.h"
-#include "render/command/command_buffers.h"
-#include "render/image/image.h"
-#include "render/image/offscreen.h"
-#include "render/swapchain/offscreens.h"
+#include "vkcpp.h"
 #include "brush.h"
 #include "picture.h"
 
 namespace painting
 {
-    struct input
-    {
-    };
     class PaintingApplication
     {
         const uint32_t MAX_FRAMES_IN_FLIGHT = 3;
