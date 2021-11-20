@@ -55,7 +55,7 @@ namespace vkcpp
                                              VkBuffer dst_buffer,
                                              VkDeviceSize size)
     {
-        CommandBuffers cmd_buffer = std::move(beginSingleTimeCmd(device, command_pool));
+        CommandBuffers cmd_buffer{beginSingleTimeCmd(device, command_pool)};
 
         cmdCopyBuffer(cmd_buffer[0],
                       src_buffer,

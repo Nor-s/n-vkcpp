@@ -83,7 +83,7 @@ namespace vkcpp
         //  VkExtent3D extent = extent_;
 
         // Do the actual blit from the swapchain image to our host visible destination image
-        vkcpp::CommandBuffers copy_cmd = std::move(vkcpp::CommandBuffers::beginSingleTimeCmd(device, command_pool_));
+        vkcpp::CommandBuffers copy_cmd{vkcpp::CommandBuffers::beginSingleTimeCmd(device, command_pool_)};
 
         // Transition destination image to transfer destination layout
         vkcpp::CommandBuffers::cmdBufferMemoryBarrier(
@@ -155,7 +155,7 @@ namespace vkcpp
         bool supportsBlit = true; //device_->check_support_blit(color_format);
 
         // Do the actual blit from the swapchain image to our host visible destination image
-        vkcpp::CommandBuffers copy_cmd = std::move(vkcpp::CommandBuffers::beginSingleTimeCmd(device_, command_pool));
+        vkcpp::CommandBuffers copy_cmd{vkcpp::CommandBuffers::beginSingleTimeCmd(device_, command_pool)};
         // Transition destination image to transfer destination layout
         vkcpp::CommandBuffers::cmdImageMemoryBarrier(
             copy_cmd[0],

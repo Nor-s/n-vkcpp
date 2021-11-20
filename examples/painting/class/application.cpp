@@ -292,7 +292,7 @@ namespace painting
 
     void PaintingApplication::reset_command_buffers_update_flag()
     {
-        is_command_buffer_updated_ = std::move(std::vector<bool>(is_command_buffer_updated_.size(), false));
+        is_command_buffer_updated_ = std::vector<bool>(is_command_buffer_updated_.size(), false);
     }
 
 } // namespace painting
@@ -339,7 +339,6 @@ namespace painting
                                                                             VK_FORMAT_R8G8B8A8_SRGB));
                 auto extent = app->object_[0]->get_extent_3d();
                 float width = static_cast<float>(extent.width);
-                float height = static_cast<float>(extent.height);
 
                 app->object_.back()->init_transform({-width / 2.0f, 0.0f, 0.0f});
                 int size = app->swapchain_->get_image_views().size();

@@ -427,7 +427,7 @@ namespace vkcpp
             dst_memory);
 
         // Do the actual blit from the swapchain image to our host visible destination image
-        vkcpp::CommandBuffers copy_cmd = std::move(vkcpp::CommandBuffers::beginSingleTimeCmd(device, command_pool));
+        vkcpp::CommandBuffers copy_cmd{vkcpp::CommandBuffers::beginSingleTimeCmd(device, command_pool)};
 
         // Transition destination image to transfer destination layout
         vkcpp::CommandBuffers::cmdBufferMemoryBarrier(

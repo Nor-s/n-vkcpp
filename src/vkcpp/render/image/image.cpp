@@ -139,7 +139,7 @@ namespace vkcpp
         bool supportsBlit = device_->check_support_blit(color_format);
 
         // Do the actual blit from the swapchain image to our host visible destination image
-        vkcpp::CommandBuffers copy_cmd = std::move(vkcpp::CommandBuffers::beginSingleTimeCmd(device_, command_pool_));
+        vkcpp::CommandBuffers copy_cmd{vkcpp::CommandBuffers::beginSingleTimeCmd(device_, command_pool_)};
         // Transition destination image to transfer destination layout
         vkcpp::CommandBuffers::cmdImageMemoryBarrier(
             copy_cmd[0],

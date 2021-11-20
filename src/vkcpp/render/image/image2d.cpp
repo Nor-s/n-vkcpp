@@ -151,7 +151,7 @@ namespace vkcpp
             image_,
             memory_);
 
-        CommandBuffers cmd_buffer = std::move(CommandBuffers::beginSingleTimeCmd(device_, command_pool_));
+        CommandBuffers cmd_buffer{CommandBuffers::beginSingleTimeCmd(device_, command_pool_)};
 
         CommandBuffers::cmdImageMemoryBarrier(
             cmd_buffer[0],
@@ -242,7 +242,7 @@ namespace vkcpp
 
         stbi_image_free(pixels);
 
-        CommandBuffers cmd_buffer = std::move(CommandBuffers::beginSingleTimeCmd(device_, command_pool_));
+        CommandBuffers cmd_buffer{CommandBuffers::beginSingleTimeCmd(device_, command_pool_)};
 
         CommandBuffers::cmdImageMemoryBarrier(
             cmd_buffer[0],
