@@ -1,7 +1,9 @@
 set(VKCPP_SRC_FILES
+    ./vkapp.h
+    ./vkapp.cpp
+    ./vkcpp.h
     ./std_header.h
     ./vulkan_header.h
-    ./object/shader_attribute.hpp
     # vkcpp window
     ./window/window.hpp
     ./window/main_window.h
@@ -25,6 +27,7 @@ set(VKCPP_SRC_FILES
     ./object/camera/sub_camera.h
     ./object/camera/sub_camera.cpp
     # vkcpp object
+    ./object/shader_attribute.hpp
     ./object/model.h
     ./object/model.cpp
     ./object/object2d.h
