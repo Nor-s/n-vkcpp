@@ -121,11 +121,15 @@ namespace vkcpp
 
         void prod_color(const glm::vec4 &color);
 
-        void init_transform(const glm::vec3 &translation, const glm::vec3 &scale = glm::vec3(1.0f, 1.0f, 1.0f), const glm::vec3 &rotation = glm::vec3(0.0f, 0.0f, 0.0f));
+        virtual void init_transform(const glm::vec3 &translation, const glm::vec3 &scale = glm::vec3(1.0f, 1.0f, 1.0f), const glm::vec3 &rotation = glm::vec3(0.0f, 0.0f, 0.0f));
 
         void add_transform(const glm::vec3 &translation, const glm::vec3 &scale = glm::vec3(0.0f, 0.0f, 0.0f), const glm::vec3 &rotation = glm::vec3(0.0f, 0.0f, 0.0f));
 
-        void update_with_main_camera(uint32_t uniform_buffer_idx);
+        void move_xy(float new_x, float new_y);
+
+        void rotate_z(float radian);
+
+        virtual void update_with_main_camera(uint32_t uniform_buffer_idx);
 
         void update_with_sub_camera(uint32_t uniform_buffer_idx, const Camera *sub_camera);
 

@@ -1,7 +1,6 @@
 #ifndef VKCPP_VKCPP_H
 #define VKCPP_VKCPP_H
 
-#include "vkapp.h"
 #include "object/shader_attribute.hpp"
 #include "window/main_window.h"
 #include "device/device.h"

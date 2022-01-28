@@ -41,7 +41,7 @@ namespace vkcpp
     {
         glfwPollEvents();
     }
-    //TODO process input
+    // TODO process input
     void MainWindow::process_input()
     {
     }
@@ -63,7 +63,7 @@ namespace vkcpp
         }
 
         glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-        //glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
+        // glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 #ifdef __APPLE__
         glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 #endif
@@ -85,6 +85,19 @@ namespace vkcpp
     void MainWindow::wait_events()
     {
         glfwWaitEvents();
+    }
+    void MainWindow::set_factor()
+    {
+        int frame_width, frame_height;
+        int window_width, window_height;
+        glfwGetFramebufferSize(handle_, &frame_width, &frame_height);
+        glfwGetWindowSize(handle_, &window_width, &window_height);
+        factor_ = frame_width / window_width;
+    }
+    float MainWindow::get_factor()
+    {
+        set_factor();
+        return factor_;
     }
 
     std::pair<const char **, uint32_t> MainWindow::get_required_instance_extensions() const
@@ -139,6 +152,10 @@ namespace vkcpp
     void MainWindow::set_scroll_callback(void (*fp)(GLFWwindow *window, double xoffset, double yoffset))
     {
         glfwSetScrollCallback(handle_, fp);
+    }
+    void MainWindow::set_mouse_button_callback(void (*fp)(GLFWwindow *window, int button, int action, int modes))
+    {
+        glfwSetMouseButtonCallback(handle_, fp);
     }
 
 } // namespace vkcpp

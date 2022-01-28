@@ -163,6 +163,15 @@ namespace vkcpp
         transform_.scale += scale;
         transform_.rotation += rotation;
     }
+    void Object2D::move_xy(float new_x, float new_y)
+    {
+        transform_.translation.x = new_x;
+        transform_.translation.y = new_y;
+    }
+    void Object2D::rotate_z(float radian)
+    {
+        transform_.rotation.z = radian;
+    }
 
     void Object2D::update_with_main_camera(uint32_t uniform_buffer_idx)
     {
@@ -397,8 +406,8 @@ namespace vkcpp
     {
         const vkcpp::Device *device = device_;
         const vkcpp::CommandPool *command_pool = command_pool_;
-        //VkFormat format = get_format();
-        // bool supportsBlit = true; //= device_->check_support_blit(object->get_);
+        // VkFormat format = get_format();
+        //  bool supportsBlit = true; //= device_->check_support_blit(object->get_);
         VkImage src_image = get_image();
         VkExtent3D extent = get_extent_3d();
         VkDeviceSize size = extent.width * 4 * extent.height;

@@ -12,9 +12,15 @@ namespace vkcpp
         MainCamera();
 
         void update();
+        void update_ortho();
 
     private:
+        float width_;
+        float height_;
+
     public:
+        float get_width() const { return width_; }
+        float get_height() const { return height_; }
     };
 }
 

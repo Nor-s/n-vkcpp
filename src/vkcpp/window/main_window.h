@@ -14,6 +14,7 @@ namespace vkcpp
 
     private:
         GLFWwindow *handle_ = nullptr;
+        float factor_;
 
     public:
         MainWindow();
@@ -29,6 +30,8 @@ namespace vkcpp
         void init_glfw();
         void destroy_window();
         void wait_events();
+        void set_factor();
+        float get_factor();
 
         std::pair<const char **, uint32_t> get_required_instance_extensions() const;
         std::pair<int, int> get_framebuffer_size();
@@ -40,6 +43,7 @@ namespace vkcpp
         void set_framebuffer_size_callback(void (*fp)(GLFWwindow *window, int width, int height));
         void set_drop_callback(void (*fp)(GLFWwindow *window, int count, const char **paths));
         void set_scroll_callback(void (*fp)(GLFWwindow *window, double xoffset, double yoffset));
+        void set_mouse_button_callback(void (*fp)(GLFWwindow *window, int button, int action, int modes));
     };
 } // namespace vkcpp
 #endif // #ifndef VKCPP_MAIN_WINDOW_H

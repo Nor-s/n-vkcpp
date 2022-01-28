@@ -1,9 +1,8 @@
 set(VKCPP_SRC_FILES
-    ./vkapp.h
-    ./vkapp.cpp
     ./vkcpp.h
     ./std_header.h
     ./vulkan_header.h
+    ./object/shader_attribute.hpp
     # vkcpp window
     ./window/window.hpp
     ./window/main_window.h
@@ -27,7 +26,6 @@ set(VKCPP_SRC_FILES
     ./object/camera/sub_camera.h
     ./object/camera/sub_camera.cpp
     # vkcpp object
-    ./object/shader_attribute.hpp
     ./object/model.h
     ./object/model.cpp
     ./object/object2d.h
@@ -79,11 +77,18 @@ add_library(vkcpp STATIC ${VKCPP_SRC_FILES})
 
 add_library(vkcpp::vkcpp ALIAS vkcpp)
 # 컴파일 옵션 설정
-target_compile_options(vkcpp PRIVATE -Wall -O3 -std=c++17)
+target_compile_options(vkcpp PRIVATE -Wall -Werror -O3 -std=c++17)
 
 if(WIN32)
   target_include_directories(vkcpp PUBLIC ./ ./../../external)
-  target_link_libraries(vkcpp glfw glm Vulkan::Vulkan -lpthread  -lgdi32 -static)
+  target_link_libraries(
+    vkcpp
+    glfw
+    glm
+    Vulkan::Vulkan
+    -lpthread
+    -lgdi32
+    -static)
 endif(WIN32)
 
 if(APPLE)
